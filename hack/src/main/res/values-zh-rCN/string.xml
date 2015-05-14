@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appname">"小助手"</string>
+    <string name="left">"左"</string>
+    <string name="right"> "右"</string>
+    <string name="up"> "上"</string>
+    <string name="down">"下"</string>
+    <string name="setting"> "设置"</string>
+    <string name="location"> "位置"</string>
+    <string name="time">"时间"</string>
+    <string name="screen">"屏幕"</string>
+    <string name="size"> "大小"</string>
+    <string name="X"> "X 子"</string>
+    <string name="Y"> "Y 子"</string>
+    <string name="test"> "测试"</string>
+    <string name="begin"> "开始"</string>
+    <string name="stop"> "停止"</string>
+    <string name="adpno"> "未添加"</string>
+    <string name="adpyes"> "已添加"</string>
+    <string name="calculate"> "计算值"</string>
+    <string name="human"> "轨迹"</string>
+    <string name="autohack">"我任性"</string>
+    <string name="nothack">"乖乖仔"</string>
+    <string name="pre">"上一个"</string>
+    <string name="nxt">"下一个"</string>
+    <string name="recbegin">"录制"</string>
+    <string name="cur">"当前"</string>
+    <string name="all">"全部"</string>
+    <string name="stoprec">"停止"</string>
+    <string name="ok" > "已添加"</string>
+    <string name="no" > "未添加"</string>
+    <string name="firstlint">第一个图案</string>
+    <string name="lastlint">最后一个图案</string>
+    <string name="humanlint">轨迹时长为:</string>
+    <string name="sec">"毫秒"</string>
+    <string name="alert">"重要信息"</string>
+    <string name="message">"飞机真的要起飞吗?"</string>
+    <string name="donotfly">"不要了"</string>
+    <string name="fly">"我要飞"</string>
+    <string name="speedfast">"飞一样的速度你肯定受不了"</string>
+    <string name="speed">"当前轨迹速度是:"</string>
+    <string name="passed">"测试通过"</string>
+    <string name="faile">"测试失败："</string>
+    <string name="auto">"计算"</string>
+    <string name="needopenauto">"乖乖仔是不用设置的"</string>
+</resources>

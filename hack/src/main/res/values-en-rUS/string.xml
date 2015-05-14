@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appname">"AutoHacker"</string>
+    <string name="left" > "L"</string>
+    <string name="right" > "R"</string>
+    <string name="up" > "U"</string>
+    <string name="down" > "D"</string>
+    <string name="setting" > "Setting"</string>
+    <string name="location" > "site"</string>
+    <string name="time" > "time"</string>
+    <string name="screen" > "screen"</string>
+    <string name="size" >"size"</string>
+    <string name="X" >"XX"</string>
+    <string name="Y" >"YY"</string>
+    <string name="test" > "test"</string>
+    <string name="begin" > "begin"</string>
+    <string name="stop" > "stop"</string>
+    <string name="adpno" > "not adp"</string>
+    <string name="adpyes" >"yes adp"</string>
+    <string name="calculate" >"Count"</string>
+    <string name="human" > "Locus"</string>
+    <string name="autohack" > "auto"</string>
+    <string name="nothack" > "manual"</string>
+    <string name="pre" > "Previous"</string>
+    <string name="nxt" > "Next"</string>
+    <string name="recbegin" > "Record"</string>
+    <string name="cur" > "Current"</string>
+    <string name="all" > "All"</string>
+    <string name="stoprec" > "Stop"</string>
+    <string name="ok" > "ok"</string>
+    <string name="no" > "no"</string>
+
+    <string name="firstlint">"the first glyph"</string>
+    <string name="lastlint">"the last glyph"</string>
+
+    <string name="humanlint">"the Locus time:"</string>
+    <string name="sec">"ms"</string>
+    <string name="alert">"Information"</string>
+    <string name="message">"Really want to fly?"</string>
+    <string name="donotfly">"don't"</string>
+    <string name="fly">"I'm sure"</string>
+    <string name="speedfast">"Too fast"</string>
+    <string name="speed">"the Locus speed is:"</string>
+    <string name="passed">"TEST PASSED"</string>
+    <string name="faile">"TEST FAILE："</string>
+    <string name="auto">"auto"</string>
+    <string name="needopenauto">"you must open the auto first"</string>
+</resources>
