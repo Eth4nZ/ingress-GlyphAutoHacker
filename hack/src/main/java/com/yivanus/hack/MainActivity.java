@@ -55,6 +55,7 @@ public class MainActivity extends ActionBarActivity {
     private RatingBar speedbar;
     NotificationManager mNotificationManager;
     private boolean guiji = true;
+    private boolean ready = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,6 +140,7 @@ public class MainActivity extends ActionBarActivity {
         });
 
         sh.setChecked(autoplay);
+
         sh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -183,7 +185,7 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
-        width = getWindowManager().getDefaultDisplay().getWidth();
+//        width = getWindowManager().getDefaultDisplay().getWidth();
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,7 +202,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent("com.yivanus.hack");
-                intent2.putExtra("message","stop");
+                intent2.putExtra("message", "stop");
                 sendBroadcast(intent2);
 //                mNotificationManager.cancel(0);
             }
@@ -216,13 +218,14 @@ public class MainActivity extends ActionBarActivity {
 //                    if (s.isEmpty()) {
 //                        Toast.makeText(getApplicationContext(), "请先测试出正确的屏幕的数据", Toast.LENGTH_SHORT).show();
 //                    } else {
-                        int startx = Integer.valueOf(s);
-                        Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory() + File.separator + "autohack/test.png");
-                        Bitmap scalebitmap = Bitmap.createBitmap(bitmap, 0, startx, width, width);
-                        Bitmap newmap = Bitmap.createScaledBitmap(scalebitmap, 110, 110, false);
-                        imageView.setImageBitmap(newmap);
-                        scalebitmap.recycle();
-                        bitmap.recycle();
+                    int startx = Integer.valueOf(s);
+                    Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory() + File.separator + "autohack/test.png");
+                    width = bitmap.getWidth();
+                    Bitmap scalebitmap = Bitmap.createBitmap(bitmap, 0, startx, width, width);
+                    Bitmap newmap = Bitmap.createScaledBitmap(scalebitmap, 110, 110, false);
+                    imageView.setImageBitmap(newmap);
+                    scalebitmap.recycle();
+                    bitmap.recycle();
 //                    }
                 } else {
                     Intent intent = new Intent();
@@ -244,7 +247,13 @@ public class MainActivity extends ActionBarActivity {
 ////                Toast.makeText(MainActivity.this, "目录创建完成", Toast.LENGTH_SHORT).show();
 //            } else {
 //                Toast.makeText(MainActivity.this, "目录创建失败", Toast.LENGTH_SHORT).show();
-//            }
+//            }d
+        }
+        File pic = new File(Environment.getExternalStorageDirectory() + File.separator + "autohack/test.png");
+        if(pic.exists()){
+            ready = true;
+        }else{
+            ready = false;
         }
         final File execfile = new File(getFilesDir().getPath() + File.separator + "eventserver");
         if (!execfile.exists()) {
@@ -359,7 +368,7 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
-        if (autoplay) {
+        if (autoplay && ready) {
             if (id == R.id.action_settings) {
                 Intent intent = new Intent(getApplicationContext(), settingActivity.class);
                 intent.putExtra("startx", Integer.valueOf(edt.getText().toString()));
@@ -374,7 +383,11 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         } else {
-            Toast.makeText(getBaseContext(), getString(R.string.needopenauto), Toast.LENGTH_SHORT).show();
+            if(!ready){
+                Toast.makeText(getBaseContext(),getString(R.string.selectpic),Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(getBaseContext(), getString(R.string.needopenauto), Toast.LENGTH_SHORT).show();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
