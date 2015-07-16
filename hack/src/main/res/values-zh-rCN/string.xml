@@ -43,4 +43,5 @@
     <string name="faile">"测试失败："</string>
     <string name="auto">"计算"</string>
     <string name="needopenauto">"乖乖仔是不用设置的"</string>
+    <string name="selectpic">"请点击测试按钮选择一个游戏背景图"</string>
 </resources>

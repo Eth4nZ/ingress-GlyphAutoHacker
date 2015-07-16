@@ -60,26 +60,19 @@ public class draws {
             public void run() {
                 try {
                     Runtime runtime = Runtime.getRuntime();
-                    String as[] = new String[1];
-                    as[0] = "su";
                     ArrayList events = new ArrayList();
-                    processrec = runtime.exec(as);
+                    processrec = runtime.exec("su");
                     dataOutputStreamrec = new DataOutputStream(processrec.getOutputStream());
                     dataInputStreamrec = new DataInputStream(processrec.getInputStream());
                     dataOutputStreamrec.writeBytes("/data/data/com.yivanus.hack/files/eventserver /dev/input/event record " + eventid + ";exit\n");
                     dataOutputStreamrec.flush();
                     byte bytes[] = new byte[18];
-//                    long starttime = System.currentTimeMillis();
                     while (dataInputStreamrec.read(bytes) == 18) {
                         Event event = new Event(bytes);
                         events.add(event);
                     }
                     processrec.waitFor();
                     ObjectOutputStream objectoutputstream = new ObjectOutputStream(new FileOutputStream("/sdcard/autohack/" + current + ".ingress"));
-
-//                    for (int z = 0; z < events.size(); z++) {
-//                        System.out.println(events.get(z).toString());
-//                    }
                     for (int j = events.size() - 1; j > 0; j--) {
                         Event t = (Event) events.get(j);
                         events.remove(t);

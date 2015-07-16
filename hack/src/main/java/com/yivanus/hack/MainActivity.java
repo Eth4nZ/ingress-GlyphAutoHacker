@@ -411,6 +411,7 @@ public class MainActivity extends ActionBarActivity {
                 imageView.setImageBitmap(newmap);
                 scalebitmap.recycle();
                 bitmap.recycle();
+                ready=true;
             } catch (Exception e) {
                 Log.e("Exception", e.getMessage(),e);
             }
